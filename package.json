@@ -1,26 +1,20 @@
 {
-	"name": "is"
-,	"version": "0.5"
-,	"description": "Duck typing utility"
-,	"keywords": [
-		"duck"
-	,	"introspection"
-	]
-,	"author": {
-		"name": "Xananax"
-	,	"email": "xananax@yelostudio.com"
-	,	"url": "http://xananax.com"
-	}
-,	"main": "index"
-,	"engines": {
-		"node": ">= 0.5.0"
-	}
-,	"repository": {
-		"type": "git"
-	,	"url": "https://github.com/yelo-npm/is"
-	}
-,	"licenses": [{
-		"type": "MIT"
-	,	"url": "http://www.opensource.org/licenses/MIT"
-    }]
+  "name": "dis",
+  "version": "0.2.1",
+  "description": "Tiny tiny duck typing utility",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yelo-npm/is.git"
+  },
+  "keywords": [
+    "duck",
+    "introspection"
+  ],
+  "author": "xananax@yelostudio.com",
+  "license": "MIT",
+  "readmeFilename": "README.md"
 }
