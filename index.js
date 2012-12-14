@@ -52,6 +52,8 @@ define(function (require, exports, module) {
 
 	is.integer = function(obj){return !isNaN(obj) && parseInt(obj) == obj;}
 
+	is.error = function(obj){return toString.call(obj) === '[object Error]';}
+
 	is.HTMLCollection = function(obj){
 		var result = toString.call(obj) 
 		if (
