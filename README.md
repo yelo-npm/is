@@ -56,6 +56,7 @@ the original "is" plugin is available <https://github.com/onirame/is>. It's sort
 	 is.node(var): checks if var is a dom node (browser only)
 	 is.regexp(var): checks if var is a regular expression
 	 is.same(var, var...): checks if all passed variables have the same type, without specifying the type
+ 	 is.referenced(var): checks if var is passed by reference (aka, object, array, etc) or by value (string or number)
 	 is.type(var): returns the type of var
 	 is(var): same as above
 	 is(var,type): checks if "var" is of type "type"

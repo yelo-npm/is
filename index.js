@@ -1,8 +1,4 @@
-if (typeof module === 'object' && typeof define !== 'function') {
-    var define =function(factory){module.exports = factory(require, exports, module);};
-}
-
-define(function (require, exports, module) {
+(function(){
 
 	var toString = Object.prototype.toString;
 	var slice = Array.prototype.slice;
@@ -25,6 +21,10 @@ define(function (require, exports, module) {
 			return is.type(obj);
 		}
 		return is;
+	}
+
+	is.referenced = function(obj){
+		return (!is.string(obj) && !is.number(obj) && !is.integer(obj));
 	}
 
 	is.object = function(obj){return obj === Object(obj);}	
@@ -91,6 +91,19 @@ define(function (require, exports, module) {
 	}
 
 
-	return is;
+	var moduleObject = is, moduleName = 'is';
 
-});
+	if (typeof define !== 'undefined'){define([], function () {return moduleObject;});}
+	else if (typeof window !== 'undefined'){
+		var propTempName = 'old_'+moduleName, propName = propTempName, trials = 0;
+		while(propName in window){
+			propName = propTempName + (trials++);
+		}
+		window[propName] = window[moduleName];
+		window[moduleName] = moduleObject;
+	}
+	else{
+		module.exports = moduleObject;
+	};
+
+})();
