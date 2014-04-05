@@ -50,6 +50,8 @@
 
 	is.number = function(obj){return typeof(obj)==='number';}
 
+	is.numeric = function(obj){return !isNaN(parseFloat(obj)) && isFinite(obj);}
+
 	is.integer = function(obj){return !isNaN(obj) && parseInt(obj) == obj;}
 
 	is.error = function(obj){return toString.call(obj) === '[object Error]';}

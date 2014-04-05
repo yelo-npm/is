@@ -50,6 +50,7 @@ the original "is" plugin is available <http://github.com/enricomarino/is>. It's 
 	 is.empty(var): checks if var is defined, an empty string, an array with no length, or an empty object
 	 is.defined(var): checks if var is null or undefined
 	 is.number(var): checks if var is a number
+	 is.numeric(var): checks if var is numeric (if it can be considered a number despite being another type)
 	 is.integer(var): checks if var is an integer
 	 is.HTMLCollection(var): checks if var is the result of a selector (browser only of course).					   
 	 is.arguments(var): checks if var is an arguments object
