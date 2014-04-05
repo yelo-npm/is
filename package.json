@@ -1,6 +1,6 @@
 {
   "name": "dis",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Tiny tiny duck typing utility",
   "main": "index.js",
   "scripts": {
