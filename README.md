@@ -38,7 +38,7 @@ or
 	var is = require('dis');
 
 note: I use "is" because it's shorter and more explicative. This is how I had named the plugin originally, but the name was not available on npm, so I had to revert to something else.
-the original "is" plugin is available <https://github.com/onirame/is>. It's sorta similar, but has more functions, and a different API. See if you like it better.
+the original "is" plugin is available <http://github.com/enricomarino/is>. It's sorta similar, but has more functions, and a different API. See if you like it better.
 
 ## List of functions:
 
