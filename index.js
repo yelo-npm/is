@@ -21,21 +21,21 @@
 			return is.type(obj);
 		}
 		return is;
-	}
+	};
 
 	is.referenced = function(obj){
 		return (!is.string(obj) && !is.number(obj) && !is.integer(obj));
-	}
+	};
 
-	is.object = function(obj){return obj === Object(obj);}	
+	is.object = function(obj){return typeof obj=='object' && obj.constructor == Object;};
 
-	is.array = function(obj){return toString.call(obj) == '[object Array]';}
+	is.array = function(obj){return toString.call(obj) == '[object Array]';};
 
-	is.boolean = function(obj){return obj === true || obj === false || toString.call(obj) == '[object Boolean]';}
+	is.boolean = function(obj){return obj === true || obj === false || toString.call(obj) == '[object Boolean]';};
 
-	is.function = function(obj){return toString.call(obj) == '[object Function]';}
+	is.function = function(obj){return toString.call(obj) == '[object Function]';};
 
-	is.string = function(obj){return toString.call(obj) == '[object String]';}
+	is.string = function(obj){return toString.call(obj) == '[object String]';};
 
 	is.empty = function(obj){
 		if((!is.defined(obj)) || obj == emptyString){return true;}
@@ -44,43 +44,40 @@
 			if (hasOwnProperty.call(obj, key)){return false;}
 		}
 		return true;
-	}
+	};
 
-	is.defined = function(obj){return !(obj===null || typeof obj === 'undefined')}
+	is.defined = function(obj){return !(obj===null || typeof obj === 'undefined');};
 
-	is.number = function(obj){return typeof(obj)==='number';}
+	is.number = function(obj){return typeof(obj)==='number';};
 
-	is.numeric = function(obj){return !isNaN(parseFloat(obj)) && isFinite(obj);}
+	is.numeric = function(obj){return !isNaN(parseFloat(obj)) && isFinite(obj);};
 
-	is.integer = function(obj){return !isNaN(obj) && parseInt(obj) == obj;}
+	is.integer = function(obj){return !isNaN(obj) && parseInt(obj) == obj;};
 
-	is.error = function(obj){return toString.call(obj) === '[object Error]';}
+	is.error = function(obj){return toString.call(obj) === '[object Error]';};
 
 	is.HTMLCollection = function(obj){
-		var result = toString.call(obj) 
+		var result = toString.call(obj);
 		if (
-			typeof nodes === 'object'
-			&&
-			/^\[object (HTMLCollection|NodeList|Object)\]$/.test(result)
-			&&
-			nodes.hasOwnProperty('length')
-			&&
-			(nodes.length == 0 || (typeof nodes[0] === "object" && nodes[0].nodeType > 0))
+			typeof nodes === 'object' &&
+			/^\[object (HTMLCollection|NodeList|Object)\]$/.test(result) &&
+			nodes.hasOwnProperty('length') &&
+			(nodes.length === 0 || (typeof nodes[0] === "object" && nodes[0].nodeType > 0))
 		) {
 			return true;
 		}
 		return false;
-	}
+	};
 
-	is.arguments = function(obj){return toString.call(obj) == '[object Arguments]';}
+	is.arguments = function(obj){return toString.call(obj) == '[object Arguments]';};
 
-	is.node = function(obj){return !!(obj && obj.nodeType == 1);}
+	is.node = function(obj){return !!(obj && obj.nodeType == 1);};
 
-	is.regexp = function(obj){return obj instanceof RegExp;}
+	is.regexp = function(obj){return obj instanceof RegExp;};
 
 	is.type = function(obj){
-		return toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase()
-	}
+		return toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
+	};
 
 	is.same = function(){
 		var oldType,newType;
@@ -90,7 +87,7 @@
 			oldType = newType;
 		}
 		return newType;
-	}
+	};
 
 
 	var moduleObject = is, moduleName = 'is';
@@ -106,6 +103,6 @@
 	}
 	else{
 		module.exports = moduleObject;
-	};
+	}
 
 })();
