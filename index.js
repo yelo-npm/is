@@ -39,9 +39,9 @@
 
 	is.empty = function(obj){
 		if((!is.defined(obj)) || obj == emptyString){return true;}
-		if (typeof obj.length !=='undefined'){return obj.length > 0 ? true:false;}
+		if (typeof obj.length !=='undefined'){return !!!(obj.length > 0);}
 		for (var key in obj) {
-			if (hasOwnProperty.call(obj, key)){return false;}
+			if (!hasOwnProperty.call(obj, key)){return false;}
 		}
 		return true;
 	};
