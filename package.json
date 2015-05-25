@@ -1,10 +1,14 @@
 {
   "name": "dis",
-  "version": "0.2.7",
+  "version": "0.3.7",
   "description": "Tiny tiny duck typing utility",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha -R spec ./test",
+    "dev": "./node_modules/.bin/mocha -R spec --watch ./test",
+    "build-min":"./node_modules/.bin/webpack --config ./webpack.config.min.js",
+    "build-normal":"./node_modules/.bin/webpack --config ./webpack.config.js",
+    "build":"npm run build-min && npm run build-normal"
   },
   "repository": {
     "type": "git",
@@ -12,9 +16,18 @@
   },
   "keywords": [
     "duck",
-    "introspection"
+    "introspection",
+    "duck-typing",
+    "type",
+    "type-checking"
   ],
   "author": "xananax@yelostudio.com",
   "license": "MIT",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*",
+    "node-libs-browser": "^0.5.2",
+    "webpack": "^1.9.9"
+  }
 }
